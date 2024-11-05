@@ -131,7 +131,7 @@ ID	Requerimiento	Descripción
     - Puerto: 3001
 
 - MQTT
-    - Host: mqtt://localhost
+    - Host: mqtt://bricker.emqx.io
     - Puerto: 1883
 
 ### 3. Preguntas de Investigación
