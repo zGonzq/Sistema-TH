@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "build:watch": "tsc --watch",
+    "serve": "nodemon dist/app.js",
+    "dev": "npm-run-all --parallel build:watch serve"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/express-ejs-layouts": "^2.5.4",
+    "nodemon": "^3.1.7",
+    "npm-run-all": "^4.1.5"
+  }
+}
