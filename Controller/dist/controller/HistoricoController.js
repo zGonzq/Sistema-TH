@@ -73,7 +73,7 @@ class HistoricoController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const id = req.params.id;
-                yield axios_1.default.delete(`${config_1.API_URL}/api/hist/delete/${id}`);
+                yield axios_1.default.delete(`${config_1.API_URL}/api/hist/delete/ ${id}`);
                 res.redirect('/historico');
             }
             catch (error) {
