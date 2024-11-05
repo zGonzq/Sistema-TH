@@ -7,7 +7,7 @@ export class UsuarioController {
 
     async getUsuarios(req: Request, res: Response): Promise<void> {
         try {
-            const response = await axios.get(`${API_URL}/api/usr`);
+            const response = await axios.get(`${API_URL}/api/usr/list`);
             const usuarios = response.data;
             res.render('usuarios/list', { usuarios });
         } catch (error) {
@@ -43,7 +43,7 @@ export class UsuarioController {
     async updateUsuario(req: Request, res: Response): Promise<void> {
         try {
             const usuario = { ...req.body, id: req.params.id };
-            await axios.put(`${API_URL}/api/usr/update${usuario.id}`, usuario);
+            await axios.put(`${API_URL}/api/usr/update/${usuario.id}`, usuario);
             res.redirect(`/usuarios/${usuario.id}`);
         } catch (error) {
             console.error(error);
@@ -55,7 +55,7 @@ export class UsuarioController {
     async deleteUsuario(req: Request, res: Response): Promise<void> {
         try {
             const id = req.params.id;
-            await axios.delete(`${API_URL}/api/usr/delete${id}`);
+            await axios.delete(`${API_URL}/api/usr/delete/${id}`);
             res.redirect('/usuarios');
         } catch (error) {
             console.error(error);

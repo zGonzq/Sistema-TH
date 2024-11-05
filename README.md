@@ -140,3 +140,10 @@ ID	Requerimiento	Descripción
     - ¿Cómo se envían datos de un sensor DHT11 a un servidor MQTT?
     - ¿Cómo se conecta un servidor MQTT a una base de datos MySQL?
 
+
+### 4. Notas
+
+- La S es datos
+- El - es tierra
+- El vacio es VCC
+

@@ -1,42 +1,36 @@
-import { Router } from 'express';
-import { HistoricoController } from '../controller/HistoricoController';
-import { UsuarioController } from '../controller/UsuarioController';
-import { CalendarioController } from '../controller/CalendarioController';
-import { ConfiguracionController } from '../controller/ConfiguracionController';
-import { IndexController } from '../controller/IndexController';
-
-const router = Router();
-const historicoController = new HistoricoController();
-const usuarioController = new UsuarioController();
-const calendarioController = new CalendarioController();
-const configuracionController = new ConfiguracionController();
-const indexController = new IndexController();
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const HistoricoController_1 = require("../controller/HistoricoController");
+const UsuarioController_1 = require("../controller/UsuarioController");
+const CalendarioController_1 = require("../controller/CalendarioController");
+const ConfiguracionController_1 = require("../controller/ConfiguracionController");
+const IndexController_1 = require("../controller/IndexController");
+const router = (0, express_1.Router)();
+const historicoController = new HistoricoController_1.HistoricoController();
+const usuarioController = new UsuarioController_1.UsuarioController();
+const calendarioController = new CalendarioController_1.CalendarioController();
+const configuracionController = new ConfiguracionController_1.ConfiguracionController();
+const indexController = new IndexController_1.IndexController();
 router.get('/', indexController.index);
-
 router.get('/usuarios', usuarioController.getUsuarios.bind(usuarioController));
 router.get('/usuarios/:id', usuarioController.getUsuarioById.bind(usuarioController));
 router.post('/usuarios', usuarioController.createUsuario.bind(usuarioController));
 router.put('/usuarios/:id', usuarioController.updateUsuario.bind(usuarioController));
 router.delete('/usuarios/:id', usuarioController.deleteUsuario.bind(usuarioController));
-
 router.get('/historico', historicoController.getHistorico.bind(historicoController));
 router.get('/historico/:id', historicoController.getHistoricoById.bind(historicoController));
 router.post('/historico', historicoController.createHistorico.bind(historicoController));
 router.put('/historico/:id', historicoController.updateHistorico.bind(historicoController));
 router.delete('/historico/:id', historicoController.deleteHistorico.bind(historicoController));
-
 router.get('/calendario', calendarioController.getCalendario.bind(calendarioController));
 router.get('/calendario/:id', calendarioController.getCalendarioById.bind(calendarioController));
 router.post('/calendario', calendarioController.createCalendario.bind(calendarioController));
 router.put('/calendario/:id', calendarioController.updateCalendario.bind(calendarioController));
 router.delete('/calendario/:id', calendarioController.deleteCalendario.bind(calendarioController));
-
 router.get('/configuracion', configuracionController.getConfiguracion.bind(configuracionController));
 router.get('/configuracion/:id', configuracionController.getConfiguracionById.bind(configuracionController));
 router.post('/configuracion', configuracionController.createConfiguracion.bind(configuracionController));
 router.put('/configuracion/:id', configuracionController.updateConfiguracion.bind(configuracionController));
 router.delete('/configuracion/:id', configuracionController.deleteConfiguracion.bind(configuracionController));
-
-
-export default router;
+exports.default = router;
